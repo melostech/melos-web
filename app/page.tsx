@@ -158,7 +158,7 @@ export default function Home() {
                 Share your technical requirements and we’ll outline the most effective path from concept to delivery.
               </p>
               <div className="mt-8 space-y-3 text-slate-300">
-                <p>hello@melossoftware.com</p>
+                <p>melostechsolution@gmail.com</p>
                 <p>+251 900 000 000</p>
                 <p>Addis Ababa · Remote-first delivery</p>
               </div>
