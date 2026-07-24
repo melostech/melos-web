@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Melos Technologies - Official Website
 
-## Getting Started
+The official website for **Melos Technologies**, a modern software development company specializing in custom software solutions, digital transformation, and innovative technology services.
 
-First, run the development server:
+## About Melos Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Melos Technologies is a forward-thinking software development company dedicated to building high-quality, scalable, and user-centric digital solutions. We help businesses transform ideas into powerful software products through expert engineering, creative problem-solving, and long-term partnership.
+
+**Our Expertise Includes**:
+- Custom Software Development
+- Web & Mobile Applications
+- Enterprise Systems & ERP
+- AI & Machine Learning Solutions
+- Cybersecurity & Compliance
+- Digital Transformation
+
+## Project Overview
+
+This website serves as the primary digital showcase for Melos Technologies. It highlights our services, successful projects, company values, team culture, and career opportunities.
+
+### Key Objectives
+- Present Melos Technologies as a reliable and innovative technology partner
+- Attract potential clients and partners
+- Showcase our portfolio and technical capabilities
+- Strengthen our online presence
+- Provide clear pathways for career opportunities
+
+##  Features
+
+- Modern, clean, and professional user interface
+- Smooth scrolling experience with meaningful animations
+- Interactive elements and engaging micro-interactions
+- Fully responsive design (mobile, tablet, desktop)
+- Fast performance and SEO optimized
+- Contact and inquiry functionality
+
+##  Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Motion**: Framer Motion
+- **Form Handling**: React Hook Form + Zod
+
+## Project Structure
+
+```
+app/                  # Next.js App Router pages
+├── globals.css
+├── layout.tsx
+├── page.tsx
+├── about/
+├── services/
+├── portfolio/
+├── careers/
+└── contact/
+
+components/
+├── layout/           # Navbar, Footer
+├── sections/         # Hero, Services, Portfolio, etc.
+└── ui/               # Reusable components (Button, Card...)
+
+data/
+└── landingContent.ts # Website content & data
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Start development server
+npm run dev
+```
 
-## Learn More
+Visit `http://localhost:3000` to view the website.
 
-To learn more about Next.js, take a look at the following resources:
+##  Development Timeline (3 Weeks)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Week 1**: Project setup, core components, Hero & About sections
+- **Week 2**: Services, Portfolio, Careers, and Contact pages + functionality
+- **Week 3**: Polish, animations refinement, testing, and final delivery
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+Recommended: **Vercel** (optimized for Next.js)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
