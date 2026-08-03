@@ -2,6 +2,7 @@ import { Footer } from "@/app/components/layout/Footer";
 import { Navbar } from "@/app/components/layout/Navbar";
 import { ScrollProgress } from "@/app/components/motion/ScrollProgress";
 import { ContactSection } from "@/app/components/sections/ContactSection";
+import { FaqSection } from "@/app/components/sections/FaqSection";
 import { ExpertiseSection } from "@/app/components/sections/ExpertiseSection";
 import { Hero } from "@/app/components/sections/Hero";
 import { PortfolioSection } from "@/app/components/sections/PortfolioSection";
@@ -24,6 +25,7 @@ export default function Home() {
       <StatsSection />
       <ExpertiseSection />
       <ProcessSection />
+      <FaqSection />
       <ContactSection />
     </main>
     <Footer />

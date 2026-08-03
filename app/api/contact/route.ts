@@ -1,39 +1,21 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { siteConfig } from "@/app/config/site";
 import { contactSchema } from "@/app/lib/schemas";
 
-const resend = new Resend(process.env.RESEND_API_KEY || "re_dummy");
+const escapeHtml = (value: string) => value.replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character] as string);
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const from = process.env.RESEND_FROM_EMAIL;
+  if (!apiKey || !from) return NextResponse.json({ error: "Project inquiries are not configured yet. Please use the email link instead." }, { status: 503 });
   try {
-    const body = await req.json();
-    const result = contactSchema.safeParse(body);
-
-    if (!result.success) {
-      return NextResponse.json({ error: "Invalid form data" }, { status: 400 });
-    }
-
-    const { name, domain, requirement } = result.data;
-
-    const { data, error } = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: ["melostechsolution@gmail.com"],
-      subject: `New Inquiry from ${name} - ${domain}`,
-      html: `
-        <h2>New Project Inquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Domain:</strong> ${domain}</p>
-        <p><strong>Requirement:</strong></p>
-        <p>${requirement}</p>
-      `,
-    });
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
-
-    return NextResponse.json({ success: true, data });
-  } catch (error) {
-    return NextResponse.json({ error: "Failed to send inquiry" }, { status: 500 });
-  }
+    const result = contactSchema.safeParse(await request.json());
+    if (!result.success) return NextResponse.json({ error: "Please review the form fields and try again." }, { status: 400 });
+    const { name, email, projectType, message, website } = result.data;
+    if (website) return NextResponse.json({ success: true });
+    const { error } = await new Resend(apiKey).emails.send({ from, to: [siteConfig.email], replyTo: email, subject: `New ${projectType} inquiry from ${name}`, html: `<h2>New project inquiry</h2><p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p><strong>Project type:</strong> ${escapeHtml(projectType)}</p><p><strong>Message:</strong></p><p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>` });
+    if (error) return NextResponse.json({ error: "We could not send your inquiry. Please try again or use the email link." }, { status: 502 });
+    return NextResponse.json({ success: true });
+  } catch { return NextResponse.json({ error: "We could not process your inquiry. Please try again." }, { status: 500 }); }
 }

@@ -2,6 +2,7 @@ import { Navbar } from "@/app/components/layout/Navbar";
 import { Footer } from "@/app/components/layout/Footer";
 import { Container, SectionHeading, Card } from "@/app/components/ui";
 import { services } from "@/app/data/landingContent";
+import Link from "next/link";
 
 export const metadata = {
   title: "Our Services",
@@ -29,6 +30,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                 <p className="mt-4 leading-relaxed text-slate-400 flex-grow">{service.description}</p>
+                <Link href={`/services/${service.slug}`} className="mt-6 text-sm font-semibold text-teal-300">Explore service →</Link>
               </Card>
             ))}
           </div>

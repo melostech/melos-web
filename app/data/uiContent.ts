@@ -1,7 +1,7 @@
 export const heroHighlights = [
-  { title: "Product engineering", description: "Strategy to launch-ready execution" },
-  { title: "AI systems", description: "Workflow automation with measurable clarity" },
-  { title: "Premium UX", description: "Motion-led interfaces built to feel effortless" },
+  { title: "Digital products", description: "From planning to deployment" },
+  { title: "Connected systems", description: "Technology that works together" },
+  { title: "Practical delivery", description: "Built around real requirements" },
 ];
 
 export const heroPill = "we build future";
@@ -11,11 +11,8 @@ export const navbarCta = {
   href: "#contact",
 };
 
-/** UI-only navigation extension; core navigation remains in landingContent.ts. */
-export const careersNavItem = { label: "Careers", href: "#careers" } as const;
-
 export const heroSignals = [
-  "Scalable product systems",
-  "Full delivery experiences",
-  "Reliable delivery leadership",
+  "Practical digital solutions",
+  "Complete product systems",
+  "Technology that serves people",
 ];

@@ -1,25 +1,30 @@
-/** UI-support content only. Keep client, service, and case-study facts in landingContent.ts. */
-export const trustSignals = ["Product teams", "Enterprise workflows", "AI-enabled operations", "Cloud modernization"];
+import type { ProcessStep } from "@/app/types/content";
 
-export const deliverySteps = [
-  { number: "01", title: "Align the problem", detail: "We clarify the outcome, constraints, system context, and the decision that matters most." },
-  { number: "02", title: "Shape the system", detail: "Architecture, interface behavior, delivery milestones, and technical risk are made visible early." },
-  { number: "03", title: "Build in the open", detail: "Small increments, rigorous reviews, and a shared view of progress keep momentum high." },
-  { number: "04", title: "Launch with confidence", detail: "We harden the critical paths, instrument the system, and make handover deliberate." },
-] as const;
+/** UI-support content only. It does not claim clients, outcomes, or a specific technology stack. */
+export const trustSignals = ["Web development", "Mobile applications", "Custom software", "Digital transformation"] as const;
+
+export const deliverySteps: readonly ProcessStep[] = [
+  { number: "01", title: "Discover", detail: "Understand the client, users, requirements, and problem." },
+  { number: "02", title: "Plan", detail: "Define the product requirements, architecture, and implementation strategy." },
+  { number: "03", title: "Design", detail: "Shape the user experience, information architecture, and technical design." },
+  { number: "04", title: "Develop", detail: "Build the required frontend, backend, data, integrations, and functionality." },
+  { number: "05", title: "Test", detail: "Check functionality, usability, performance, security, and compatibility." },
+  { number: "06", title: "Deploy", detail: "Prepare the production environment and launch the product." },
+  { number: "07", title: "Support & improve", detail: "Maintain and evolve the product using real-world feedback." },
+];
 
 export const serviceExperience = {
-  "Custom Software Engineering": ["Product architecture", "Web & mobile delivery", "Integration-ready systems"],
-  "Enterprise Systems": ["Workflow modeling", "Role-aware platforms", "Governed data flows"],
-  "CRM & Customer Automation": ["Operational visibility", "Connected handoffs", "Automation design"],
-  "Security & Compliance": ["Secure foundations", "Risk assessment", "Resilient access patterns"],
-  "AI & Machine Learning": ["Practical AI workflows", "Decision support", "Data-informed automation"],
-  "Delivery & Modernization": ["Technical direction", "Migration planning", "Team enablement"],
+  "Web Development": ["Responsive applications", "Business websites", "Customer portals"],
+  "Mobile Application Development": ["Service applications", "Productivity tools", "Custom mobile solutions"],
+  "Custom Software Development": ["Workflow systems", "Data management", "Operational dashboards"],
+  "System Development": ["Connected components", "Business logic", "Administration"],
+  "IT Consulting": ["Requirements discovery", "System evaluation", "Technical planning"],
+  "Digital Transformation": ["Digital workflows", "Process improvement", "Connected operations"],
 } as const;
 
 export const heroCapabilityMeaning = {
-  Build: "Turn a promising idea into a dependable product foundation.",
-  Operate: "Make complex day-to-day work visible, connected, and reliable.",
-  Intelligence: "Put useful signals and automation where decisions actually happen.",
-  Evolve: "Keep the platform moving as priorities, scale, and technology change.",
+  Build: "Turn a promising idea into a dependable digital product.",
+  Operate: "Make day-to-day work clearer, connected, and reliable.",
+  Intelligence: "Use data and automation where they are genuinely useful.",
+  Evolve: "Keep the system maintainable as priorities and requirements change.",
 } as const;

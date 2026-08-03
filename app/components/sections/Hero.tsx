@@ -39,8 +39,8 @@ export function Hero() {
           <span className="relative flex h-2 w-2"><span className="pulse-ring absolute inset-0 rounded-full bg-teal-300" /><span className="relative h-2 w-2 rounded-full bg-teal-300" /></span>{heroPill}
         </motion.div>
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .18, duration: .7 }} className="mt-8 text-[11px] font-bold uppercase tracking-[.28em] text-teal-300">Engineering excellence, rooted in ambition</motion.p>
-        <motion.h1 style={{ x: headlineX, y: headlineY }} className="mt-5 max-w-4xl text-[clamp(3.5rem,7.2vw,7.4rem)] font-semibold leading-[.86] tracking-[-.075em] text-white">
-          {headline.map((word, index) => <span key={word} className="mr-[.17em] inline-block overflow-hidden pb-[.08em]"><motion.span initial={{ y: "112%", rotate: 5 }} animate={{ y: 0, rotate: 0 }} transition={{ delay: .23 + index * .075, duration: .84, type: "spring", bounce: .22 }} className={`inline-block ${word === "ambition" ? "text-gradient" : ""}`}>{word}</motion.span></span>)}
+        <motion.h1 style={{ x: headlineX, y: headlineY }} className="mt-5 max-w-4xl text-[clamp(3.5rem,6.2vw,7.4rem)] font-semibold leading-[.86] tracking-[-.075em] text-white">
+          {headline.map((word, index) => <span key={word} className="mr-[.17em] inline-block overflow-hidden pb-[.04em]"><motion.span initial={{ y: "112%", rotate: 5 }} animate={{ y: 0, rotate: 0 }} transition={{ delay: .23 + index * .075, duration: .84, type: "spring", bounce: .22 }} className={`inline-block ${word === "ambition" ? "text-gradient" : ""}`}>{word}</motion.span></span>)}
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .75, duration: .65 }} className="mt-8 max-w-xl text-lg leading-8 text-slate-300">{services[0].description} We turn the complicated work of building into a clear, resilient advantage.</motion.p>
         <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .88, duration: .65 }} className="mt-9 flex flex-wrap gap-3">
