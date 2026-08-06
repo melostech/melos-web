@@ -27,4 +27,6 @@ export const heroCapabilityMeaning = {
   Operate: "Make day-to-day work clearer, connected, and reliable.",
   Intelligence: "Use data and automation where they are genuinely useful.",
   Evolve: "Keep the system maintainable as priorities and requirements change.",
+  Scale: "Grow capacity and performance smoothly as demand increases.",
+  Secure: "Protect data and systems with reliable, built-in safeguards.",
 } as const;
